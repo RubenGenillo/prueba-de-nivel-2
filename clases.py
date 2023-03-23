@@ -7,7 +7,6 @@ class Punto:
         return "({},{})".format(self.x,self.y)
     
     def cuadrante(self):
-        #se lo voy a hacer asi
         if self.x > 0:
             if self.y > 0:
                 return "esta en el primer cuadrante"
@@ -25,8 +24,7 @@ class Punto:
                 return "se situa en el origen"
         else:
             return "se situa en el eje X"
-        
-        #?????
+
     def vector(self, oPunto):
         return Punto(oPunto.x - self.x, oPunto.y - self.y)
     
