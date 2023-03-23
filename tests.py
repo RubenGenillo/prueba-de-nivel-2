@@ -6,24 +6,41 @@ B = Punto(5,5)
 C = Punto(3, -1)
 D = Punto(0,0)
 
+rect = Rectangulo(A,B)
+
 
 class PuntosYRectangulosTestCase(unittest.TestCase):
+
     def testCrear(self):
         self.assertIsInstance(A, Punto)
         self.assertIsInstance(B, Punto)
         self.assertIsInstance(C, Punto)
         self.assertIsInstance(D, Punto)
-        self.assertIS
+        self.assertEqual(A.__str__(), "(2,3)")
+        self.assertEqual(B.__str__(), "(5,5)")
+        self.assertEqual(C.__str__(), "(3,-1)")
+        self.assertEqual(D.__str__(), "(0,0)")
 
-    
+    def testCuadrantes(self):
+        self.assertEqual(A.cuadrante(), "esta en el primer cuadrante")
+        self.assertEqual(C.cuadrante(), "esta en el cuarto cuadrante")
+        self.assertEqual(D.cuadrante(), "se situa en el origen")
+    def testVectores(self):
+        self.assertEqual(A.vector(B).__str__(), "(3,2)")
+        self.assertEqual(B.vector(A).__str__(), "(-3,-2)")
+    def testdistancia(self):
+        self.assertEqual(A.distancias(B), 3.605551275463989)
+        self.assertEqual(B.distancias(A), 3.605551275463989)
+        
+    def testrectangulo(self):
+        self.assertEqual(rect.base(), 3)
+        self.assertEqual(rect.altura(), 2)
+        self.assertEqual(rect.area(), 6)
 
 
-        #self.assertFalse(self, expresion)
 
-        #Same as self.assertTrue(isinstance(obj, cls)), with a nicer
-     #  |      default message.
+
 
 if __name__ == "__main__":
     unittest.main()
     
-
