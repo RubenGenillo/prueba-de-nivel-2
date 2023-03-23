@@ -32,13 +32,17 @@ class PuntosYRectangulosTestCase(unittest.TestCase):
         self.assertEqual(A.distancias(B), 3.605551275463989)
         self.assertEqual(B.distancias(A), 3.605551275463989)
         
+    def testMasLejano(self):
+        self.assertLess(C.distancias(D),B.distancias(D))
+        self.assertLess(A.distancias(D),B.distancias(D))
+
+    def testCrearRectangulo(self):
+        self.assertIsInstance(rect, Rectangulo)
+        
     def testrectangulo(self):
         self.assertEqual(rect.base(), 3)
         self.assertEqual(rect.altura(), 2)
         self.assertEqual(rect.area(), 6)
-
-
-
 
 
 if __name__ == "__main__":
