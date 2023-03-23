@@ -59,8 +59,6 @@ if __name__ == "__main__":
     print(B.vector(A))
     print(A.distancias(B))
     print(B.distancias(A))
-
-    #####
-
+    print(C.distancias(D) < B.distancias(D) and A.distancias(D) < B.distancias(D))
     rect = Rectangulo(A,B)
-    print(rect.base(), rect.altura(), rect.area())
+    print("Base: {}, Altura: {}, Area: {}".format(rect.base(), rect.altura(), rect.area()))
